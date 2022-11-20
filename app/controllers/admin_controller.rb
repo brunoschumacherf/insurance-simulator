@@ -70,4 +70,11 @@ class AdminController < ActionController::API
     end
     render json: response
   end
+
+
+  private
+
+  def user_params
+    params.permit(:email, :password, :password_confirmation)
+  end
 end

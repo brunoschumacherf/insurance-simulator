@@ -1,4 +1,4 @@
-class RoofsController < ApplicationController
+class RoofsController < ApiController
   def create
     roof = Roof.new(roof_params)
     roof.insurance = Insurance.find(params[:insurance_id])

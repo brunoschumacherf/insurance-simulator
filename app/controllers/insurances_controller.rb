@@ -1,4 +1,4 @@
-class InsurancesController < ApplicationController
+class InsurancesController < ApiController
   def create
     insurance = Insurance.new
     insurance.user = current_user
@@ -7,14 +7,14 @@ class InsurancesController < ApplicationController
     if insurance.save
       render json: { message: I18n.t('api.insurance_created') }, status: 200
     else
-      render json: { message: insurance.errors.full_messages }, status: 422
+      render json: { message: insurance.errors.full_messages }, status: 400
     end
   end
 
   def get_insurance
     insurance = Insurance.find(params[:id])
     if insurance.blank? || insurance.user != current_user
-      render json: { message: I18n.t('api.insurance_not_found') }, status: 404
+      render json: { message: I18n.t('api.insurance_not_found') }, status: 400
     else
       render json: insurance
     end
