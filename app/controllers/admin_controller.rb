@@ -1,5 +1,5 @@
 class AdminController < ActionController::API
-  before_filter :check_admin
+  before_action :check_admin
 
   def create_admin
     user = Admin.new(user_params)
