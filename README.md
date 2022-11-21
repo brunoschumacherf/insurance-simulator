@@ -1,10 +1,20 @@
 # insurance-simulator
 
+
+
 ## DOCUMENTAÇÃO README
 ### LEMBRANDO QUE ONDE TEM ':ID' É O ID NO GET
 ### No final exemplos de uma simulação e um usuário Admin
 
+### DOCUMENTAÇÃO NO POSTMAN
+```
+https://api.postman.com/collections/19946352-2e281c0a-8641-497e-bf98-e0d29b6b4410?access_key=PMAT-01GJC0H8YY7YQV44MKYQ4D5MZK
+``` 
 
+### LINK HEROKU DEPROY
+```
+https://insurance-simulator.herokuapp.com/
+```
 
 ## Users
 
