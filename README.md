@@ -1,8 +1,10 @@
 # insurance-simulator
 
+## DOCUMENTAÇÃO README
+### LEMBRANDO QUE ONDE TEM ':ID' É O ID NO GET
+
+
 ## Users
-
-
 
 ### Criar Usuário comum exemplo
 #### [POST] /api/login/signup
@@ -120,11 +122,11 @@
 }
 ```
 
-### Exbir todas Cobertura
+### Exbir todos Seguros
 #### [GET] api/admin/insurances
 
 
-### Buscar uma Cobertura
+### Buscar um Seguros
 #### [GET] api/admin/insurances/:id
 
 
@@ -134,6 +136,10 @@
 
 ### Buscar um usuário
 ### [GET] api/admin/users/:id
+
+
+### Exibir coberturas de um seguro
+### [GET] api/admin/roofs/:id
 
 
 

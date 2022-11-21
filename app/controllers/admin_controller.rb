@@ -40,6 +40,11 @@ class AdminController < ActionController::API
     render json: insurance
   end
 
+  def get_roofs
+    insurance = Insurance.find(params[:id])
+    render json: insurance.roofs
+  end
+
   def check_admin
     return if current_user.is_a? Admin
 
