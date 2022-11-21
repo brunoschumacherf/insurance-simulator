@@ -1,4 +1,5 @@
 class Insurance < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, class_name: 'User'
   has_many :roofs
+
 end

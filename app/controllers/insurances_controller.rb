@@ -3,7 +3,6 @@ class InsurancesController < ApiController
     insurance = Insurance.new
     insurance.user = current_user
     insurance.name = params[:name]
-
     if insurance.save
       render json: { message: I18n.t('api.insurance_created') }, status: 200
     else

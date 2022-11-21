@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :email, presence: { message: I18n.t('api.required_param', param: 'email') }
   validates :password, presence: { message: I18n.t('api.required_param', param: 'senha') }
 
-  has_many :insurances
+  has_many :insurances, class_name: 'Insurance'
   def user_map
     {
       id: id,

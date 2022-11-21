@@ -3,6 +3,7 @@ class CreateRoofs < ActiveRecord::Migration[7.0]
     create_table :roofs do |t|
       t.string :name
       t.float :factor
+      t.references :insurance, index: true
 
       t.timestamps
     end

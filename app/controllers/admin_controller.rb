@@ -1,5 +1,5 @@
 class AdminController < ActionController::API
-  before_action :check_admin
+  before_action :check_admin, except: %i[login_admin create_admin]
 
   def create_admin
     user = Admin.new(user_params)
@@ -13,7 +13,7 @@ class AdminController < ActionController::API
   def login_admin
     user = Admin.find_by_email(params[:email])
     if user.valid_password?(params[:password])
-      sign_in user, current_user
+      sign_in user
       render json: { message: I18n.t('api.admin_logged_in') }, status: 200
     else
       render json: { message: I18n.t('api.invalid_login') }, status: 401
@@ -58,19 +58,21 @@ class AdminController < ActionController::API
     response[:insurance_id] = params[:insurance_id]
     response[:coverages] = []
     i = 0
+    total = 0
     params[:coberturas].each do |cobertura|
       roof = insurance.roofs.find(cobertura[:roof_id])
       next if roof.nil?
-
+      valor = cobertura[:acapital] * roof.factor
       response[:coverages][i][:name] = roof.name
       response[:coverages][i][:coverages_id] = roof.id
       response[:coverages][i][:capital] = cobertura[:capital]
-      response[:coverages][i][:premio] = cobertura[:acapital] * roof.factor
+      response[:coverages][i][:premio] = valor
       i += 1
+      total += valor
     end
+    response[:total] = total
     render json: response
   end
-
 
   private
 
