@@ -2,6 +2,8 @@
 
 ## DOCUMENTAÇÃO README
 ### LEMBRANDO QUE ONDE TEM ':ID' É O ID NO GET
+### No final exemplos de uma simulação e um usuário Admin
+
 
 
 ## Users
@@ -135,12 +137,15 @@
 #### [GET] /api/admin/users
 
 ### Buscar um usuário
-### [GET] api/admin/users/:id
+#### [GET] api/admin/users/:id
 
 
 ### Exibir coberturas de um seguro
-### [GET] api/admin/roofs/:id
+#### [GET] api/admin/roofs/:id
 
+### Deslogar Admin
+
+#### [GET] api/admin/signout
 
 
 

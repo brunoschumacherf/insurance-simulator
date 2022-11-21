@@ -36,6 +36,10 @@ class DeviseCreateAdmins < ActiveRecord::Migration[7.0]
       t.timestamps null: false
     end
 
+    devise_for :admins
+
+    current_admin
+
     add_index :admins, :email,                unique: true
     add_index :admins, :reset_password_token, unique: true
     # add_index :admins, :confirmation_token,   unique: true

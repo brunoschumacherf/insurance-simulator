@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get 'api/admin/users', to: 'admin#get_users'
   get 'api/admin/users/:id', to: 'admin#get_user'
   get 'api/admin/roofs/:id', to: 'admin#get_roofs'
+  post 'api/admin/signout', to: 'admin#signout_admin'
 
 
   # Defines the root path route ("/")
