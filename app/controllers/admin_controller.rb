@@ -6,7 +6,7 @@ class AdminController < ActionController::API
     if user.save
       render json: { message: I18n.t('api.user_created') }, status: 200
     else
-      render json: { message: user.errors.full_messages }, status: 422
+      render json: { message: user.errors.full_messages }, status: 400
     end
   end
 
@@ -58,10 +58,10 @@ class AdminController < ActionController::API
 
   def simulate
     user = User.find(params[:user_id])
-    render json: { message: I18n.t('api.user_not_found') }, status: 404 if user.blank?
+    render json: { message: I18n.t('api.user_not_found') }, status: 400 if user.blank?
     insurance = user.insurances.find(params[:insurance_id])
 
-    render json: { message: I18n.t('api.insurance_not_found') }, status: 404 if insurance.blank?
+    render json: { message: I18n.t('api.insurance_not_found') }, status: 400 if insurance.blank?
 
     response = {}
     response[:insurance_id] = params[:insurance_id]
