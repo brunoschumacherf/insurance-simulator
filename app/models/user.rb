@@ -3,13 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :name, presence: { message: I18n.t('api.required_param', param: 'nome') }
-  validates :age, presence: { message: I18n.t('api.required_param', param: 'idade') }
-  validates :address, presence: { message: I18n.t('api.required_param', param: 'endereço') }
-  validates :number, presence: { message: I18n.t('api.required_param', param: 'número') }
-  validates :zipcode, presence: { message: I18n.t('api.required_param', param: 'CEP') }
-  validates :email, presence: { message: I18n.t('api.required_param', param: 'email') }
-  validates :password, presence: { message: I18n.t('api.required_param', param: 'senha') }
+  validates :name, presence: { message: I18n.t('api.required_param') }
+  validates :age, presence: { message: I18n.t('api.required_param') }
+  validates :address, presence: { message: I18n.t('api.required_param') }
+  validates :number, presence: { message: I18n.t('api.required_param') }
+  validates :zipcode, presence: { message: I18n.t('api.required_param') }
+  validates :email, presence: { message: I18n.t('api.required_param') }
+  validates :password, presence: { message: I18n.t('api.required_param') }
 
   has_many :insurances, class_name: 'Insurance'
   def user_map

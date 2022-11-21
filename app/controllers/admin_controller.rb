@@ -13,7 +13,7 @@ class AdminController < ActionController::API
   def login_admin
     user = Admin.find_by_email(params[:email])
     if user.valid_password?(params[:password])
-      sign_in user
+      sign_in user, current_user
       render json: { message: I18n.t('api.admin_logged_in') }, status: 200
     else
       render json: { message: I18n.t('api.invalid_login') }, status: 401

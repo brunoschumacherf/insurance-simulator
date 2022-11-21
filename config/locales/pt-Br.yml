@@ -11,3 +11,5 @@ pt-BR:
     sign_out: 'Deslogado com Sucesso'
     roof_not_found:  'Seguro não encontrado'
     roof_created: 'Seguro criado'
+    not_user: 'Logue com seu usuário'
+    required_param: "Parametro invalido"
