@@ -1,0 +1,13 @@
+pt-BR:
+  api:
+    admin_logged_in: 'Logado com Sucesso'
+    user_logged_in: 'Logado com Sucesso'
+    user_created: 'Usuário Criando com Sucesso'
+    invalid_login: 'Usuário ou Senha Incorreto'
+    not_admin: 'Logue com seu usuário Admin'
+    user_not_found: 'Usuário não encontrado'
+    insurance_not_found: 'Seguros não encontrada'
+    insurance_created: 'Seguro criado com sucesso'
+    sign_out: 'Deslogado com Sucesso'
+    roof_not_found:  'Seguro não encontrado'
+    roof_created: 'Seguro criado'

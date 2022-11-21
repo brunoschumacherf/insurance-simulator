@@ -12,7 +12,7 @@ class RoofsController < ApiController
   def get_roofs
     insurance = Insurance.find(params[:insurance_id])
     if insurance.blank? || insurance.user != current_user
-      render json: { message: I18n.t('api.insurance_not_found') }, status: 404
+      render json: { message: I18n.t('api.roof_not_found') }, status: 404
     else
       render json: insurance.roofs
     end

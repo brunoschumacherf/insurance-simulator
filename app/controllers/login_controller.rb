@@ -21,7 +21,7 @@ class LoginController < ApiController
 
   def signout
     sign_out
-    render json: { message: I18n.t('api.sign_out.success') }
+    render json: { message: I18n.t('api.sign_out') }
   end
 
   def user_map
