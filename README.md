@@ -143,3 +143,28 @@
 
 
 
+
+### EXEMPLOS
+#### User admin
+```json
+{
+    "email": "abc1@example.com",
+    "password": "password"
+}
+```
+
+### Para simular
+
+```json
+{
+  "user_id": 1,
+  "insurance_id": 1,
+  "coberturas": [
+    {"coverage_id": 1, "capital": 1000 }
+    {"coverage_id": 2, "capital": 1000 }
+  ]
+}
+```
+
+
+

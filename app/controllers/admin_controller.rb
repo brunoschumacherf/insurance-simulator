@@ -52,10 +52,9 @@ class AdminController < ActionController::API
   end
 
   def simulate
-    user = User.find(params[:id])
+    user = User.find(params[:user_id])
     render json: { message: I18n.t('api.user_not_found') }, status: 404 if user.blank?
-
-    insurance = user.insurance.find(params[:insurance_id])
+    insurance = user.insurances.find(params[:insurance_id])
 
     render json: { message: I18n.t('api.insurance_not_found') }, status: 404 if insurance.blank?
 
@@ -65,9 +64,11 @@ class AdminController < ActionController::API
     i = 0
     total = 0
     params[:coberturas].each do |cobertura|
-      roof = insurance.roofs.find(cobertura[:roof_id])
+      roof = insurance.roofs.find(cobertura[:coverage_id])
       next if roof.nil?
-      valor = cobertura[:acapital] * roof.factor
+
+      response[:coverages][i] = {}
+      valor = cobertura[:capital] * roof.factor
       response[:coverages][i][:name] = roof.name
       response[:coverages][i][:coverages_id] = roof.id
       response[:coverages][i][:capital] = cobertura[:capital]
